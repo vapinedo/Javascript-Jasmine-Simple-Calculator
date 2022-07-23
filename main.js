@@ -3,8 +3,15 @@ document.getElementById("inputValue").addEventListener("change", calculate);
 function calculate(event) {
   const inputValue = event.target.value;
   const regExp = /\+|\-|\*|\//gm;
-//   const numberA;
-//   const numberB;
-//   const operator;
-  console.log({ inputValue });
+
+  const numberList = inputValue.split(regExp);
+  const numberA = Number(numberList[0]);
+  const numberB = Number(numberList[1]);
+  const operation = inputValue.match(regExp);
+  const operator = operation[0];
+
+  const calculator = new Calculator();
+  calculator.add(4);
+  calculator.add(4);
+  console.log(calculator.total);
 }
