@@ -8,8 +8,13 @@ function calculate(event) {
   const numberA = Number(numberList[0]);
   const numberB = Number(numberList[1]);
   const operation = inputValue.match(regExp);
-  const operator = operation[0];
 
+  if (isNaN(numberA) || isNaN(numberB) || operation === null) {
+    updateResult('Operation not recognized');
+    return;
+  }
+
+  const operator = operation[0];
   const calculator = new Calculator();
   calculator.add(numberA);
 
@@ -35,7 +40,7 @@ function calculate(event) {
   updateResult(result);
 
   function updateResult(result) {
-    const element = document.getElementById('result');
+    const element = document.getElementById("result");
     if (element != null) {
       element.innerText = result;
     }
