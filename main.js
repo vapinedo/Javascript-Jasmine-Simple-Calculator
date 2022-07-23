@@ -11,7 +11,35 @@ function calculate(event) {
   const operator = operation[0];
 
   const calculator = new Calculator();
-  calculator.add(4);
-  calculator.add(4);
-  console.log(calculator.total);
+  calculator.add(numberA);
+
+  let result;
+  switch (operator) {
+    case "+":
+      result = calculator.add(numberB);
+      break;
+
+    case "-":
+      result = calculator.subtract(numberB);
+      break;
+
+    case "*":
+      result = calculator.multiply(numberB);
+      break;
+
+    case "/":
+      result = calculator.divide(numberB);
+      break;
+  }
+
+  updateResult(result);
+
+  function updateResult(result) {
+    const element = document.getElementById('result');
+    if (element != null) {
+      element.innerText = result;
+    }
+  }
+
+  console.log({ result });
 }
