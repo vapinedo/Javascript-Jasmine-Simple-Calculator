@@ -1,1 +1,3 @@
-// test suite
+describe('Test Suites :: calculator.js', () => {
+        
+});
