@@ -36,4 +36,10 @@ describe("TEST SUITE :: calculator.js", () => {
     const calculator2 = new Calculator();
     expect(calculator1).toEqual(calculator2);
   });
+
+  it("should have unique calculator object", () => {
+    const calculator1 = new Calculator();
+    const calculator2 = new Calculator();
+    expect(calculator1).not.toBe(calculator2);
+  });
 });
