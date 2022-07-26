@@ -42,4 +42,12 @@ describe("TEST SUITE :: calculator.js", () => {
     const calculator2 = new Calculator();
     expect(calculator1).not.toBe(calculator2);
   });
+
+  it("should have common methods", () => {
+    const calculator = new Calculator();
+    expect(calculator.add).not.toBeUndefined();
+    expect(calculator.subtract).not.toBeUndefined();
+    expect(calculator.multiply).toBeDefined();
+    expect(calculator.divide).not.toBeUndefined();
+  });
 });
