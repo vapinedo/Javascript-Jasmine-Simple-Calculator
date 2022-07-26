@@ -29,8 +29,11 @@ describe("TEST SUITE :: calculator.js", () => {
   it("should initialize the total", () => {
     const calculator = new Calculator();
     expect(calculator.total).toBe(0);
-    // let player1 = { name: 'karim' };
-    // let player2 = { name: 'karim' };
-    // expect(player1).toBe(player1);
+  });
+
+  it("should initialize the constructor", () => {
+    const calculator1 = new Calculator();
+    const calculator2 = new Calculator();
+    expect(calculator1).toEqual(calculator2);
   });
 });
