@@ -33,3 +33,20 @@
 describe("TEST SUITE :: nameOfFileToTest.ext", () => {});
 
 ```
+### Assertion Libary
+```
+    @params
+    first: test or spec name ( string )
+    seconnd: callback fn ( expection )
+
+  it("should subtract number from the total", () => {});
+
+```
+### Expectation
+```
+    first: expect function
+    second: matcher function
+
+    expect(valueReturnByActualCoding).toBe(valueExpectedByUser);
+
+```
