@@ -50,4 +50,10 @@ describe("TEST SUITE :: calculator.js", () => {
     expect(calculator.multiply).toBeDefined();
     expect(calculator.divide).not.toBeUndefined();
   });
+
+  it("can overrite total value", () => {
+    const calculator = new Calculator();
+    calculator.total = null;
+    expect(calculator.total).toBeNull();
+  });
 });
