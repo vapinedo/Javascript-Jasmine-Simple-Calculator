@@ -37,7 +37,7 @@ describe("TEST SUITE :: nameOfFileToTest.ext", () => {});
 ```
     @params
     first: test or spec name ( string )
-    seconnd: callback ( ) to write expectation or expectations
+    seconnd: ( function ) to write expectation or expectations
 
   it("should subtract number from the total", () => {});
 
