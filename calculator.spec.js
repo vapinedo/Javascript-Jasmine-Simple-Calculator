@@ -81,4 +81,13 @@ describe("TEST SUITE :: calculator.js", () => {
     calculator.multiply('a');
     expect(calculator.total).toBeNaN();
   });
+
+  // toThrow Matcher
+  it('should throw error when divide by zero', () => {
+    const calculator = new Calculator();
+    calculator.total = 10;
+    expect(() => calculator.divide(0)).toThrow();
+    const divisor = 0;
+    expect(() => calculator.divide(divisor)).toThrow(new Error(`Error trying to divide by: ${divisor}`));
+  });
 });
