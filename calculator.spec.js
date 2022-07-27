@@ -1,12 +1,12 @@
 describe("TEST SUITE :: calculator.js", () => {
-  // toBe
+  // toBe Matcher
   it("should add number to the total", () => {
     const calculator = new Calculator();
     calculator.add(5);
     expect(calculator.total).toBe(5);
   });
 
-  // toBe
+  // toBe Matcher
   it("should subtract number from the total", () => {
     const calculator = new Calculator();
     calculator.total = 30;
@@ -14,7 +14,7 @@ describe("TEST SUITE :: calculator.js", () => {
     expect(calculator.total).toBe(25);
   });
 
-  // toBe
+  // toBe Matcher
   it("should multiply number with the total", () => {
     const calculator = new Calculator();
     calculator.total = 10;
@@ -22,7 +22,7 @@ describe("TEST SUITE :: calculator.js", () => {
     expect(calculator.total).toBe(20);
   });
 
-  // toBe
+  // toBe Matcher
   it("should divide number by the total", () => {
     const calculator = new Calculator();
     calculator.total = 10;
@@ -30,27 +30,27 @@ describe("TEST SUITE :: calculator.js", () => {
     expect(calculator.total).toBe(5);
   });
 
-  // toBe
+  // toBe Matcher
   it("should initialize the total", () => {
     const calculator = new Calculator();
     expect(calculator.total).toBe(0);
   });
 
-  // toEqual
+  // toEqual Matcher
   it("should initialize the constructor", () => {
     const calculator1 = new Calculator();
     const calculator2 = new Calculator();
     expect(calculator1).toEqual(calculator2);
   });
 
-  // not
+  // not Matcher
   it("should have unique calculator object", () => {
     const calculator1 = new Calculator();
     const calculator2 = new Calculator();
     expect(calculator1).not.toBe(calculator2);
   });
 
-  // toBeDefined & toBeUndefined
+  // toBeDefined & toBeUndefined Matcher
   it("should have common methods", () => {
     const calculator = new Calculator();
     expect(calculator.add).not.toBeUndefined();
@@ -59,18 +59,26 @@ describe("TEST SUITE :: calculator.js", () => {
     expect(calculator.divide).not.toBeUndefined();
   });
 
-  // toBeNull
+  // toBeNull Matcher
   it("can overrite total value", () => {
     const calculator = new Calculator();
     calculator.total = null;
     expect(calculator.total).toBeNull();
   });
 
-  // toContain ( for arrays & strings )
+  // toContain ( for arrays & strings ) Matcher
   it('should have the calculator constructor', () => {
     const calculator = new Calculator();
     let arr = [1, 2, 3, 4];
     expect(arr).toContain(3);
     expect(calculator.constructor.name).toContain('alc');
+  });
+
+  // toBeNaN Matcher
+  it('should not handle NaN for multiply', () => {
+    const calculator = new Calculator();
+    calculator.total = 10;
+    calculator.multiply('a');
+    expect(calculator.total).toBeNaN();
   });
 });
