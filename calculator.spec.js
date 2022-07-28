@@ -125,6 +125,6 @@ describe("TEST SUITE :: calculator.js", () => {
   it("should return the total as value", () => {
     const calculator = new Calculator();
     calculator.total = 2;
-    expect(calculator.total).toEqual(jasmine.anything()); // anything less null or undefined
+    expect(calculator.total).toEqual(jasmine.anything()); // anything other than null or undefined
   });
 });
