@@ -93,15 +93,29 @@ describe("TEST SUITE :: calculator.js", () => {
     );
   });
 
-  // toThrowError
+  // toThrowError Matcher
   it("should throw error with message, when divide by zero", () => {
     const calculator = new Calculator();
     const number = 0;
     calculator.total = number;
-    expect(function() {
-      calculator.divide(number)
+    expect(function () {
+      calculator.divide(number);
     }).toThrowError();
-    expect(() => calculator.divide(number)).toThrowError(`Error trying to divide by: ${number}`);
-    expect(() => calculator.divide(number)).toThrowError(ArithmeticError, `Error trying to divide by: ${number}`);
+    expect(() => calculator.divide(number)).toThrowError(
+      `Error trying to divide by: ${number}`
+    );
+    expect(() => calculator.divide(number)).toThrowError(
+      ArithmeticError,
+      `Error trying to divide by: ${number}`
+    );
+  });
+
+  // toMatch Matcher
+  it("should return total a number", () => {
+    const calculator = new Calculator();
+    calculator.total = 10;
+    expect(calculator.add(10)).toBe(20);
+    expect(calculator.total).toMatch(/-?\d+/);
+    expect(typeof calculator.total).toMatch("ber");
   });
 });
