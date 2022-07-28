@@ -67,27 +67,41 @@ describe("TEST SUITE :: calculator.js", () => {
   });
 
   // toContain ( for arrays & strings ) Matcher
-  it('should have the calculator constructor', () => {
+  it("should have the calculator constructor", () => {
     const calculator = new Calculator();
     let arr = [1, 2, 3, 4];
     expect(arr).toContain(3);
-    expect(calculator.constructor.name).toContain('alc');
+    expect(calculator.constructor.name).toContain("alc");
   });
 
   // toBeNaN Matcher
-  it('should not handle NaN for multiply', () => {
+  it("should not handle NaN for multiply", () => {
     const calculator = new Calculator();
     calculator.total = 10;
-    calculator.multiply('a');
+    calculator.multiply("a");
     expect(calculator.total).toBeNaN();
   });
 
   // toThrow Matcher
-  it('should throw error when divide by zero', () => {
+  it("should throw error when divide by zero", () => {
     const calculator = new Calculator();
     calculator.total = 10;
     expect(() => calculator.divide(0)).toThrow();
     const divisor = 0;
-    expect(() => calculator.divide(divisor)).toThrow(new Error(`Error trying to divide by: ${divisor}`));
+    expect(() => calculator.divide(divisor)).toThrow(
+      new Error(`Error trying to divide by: ${divisor}`)
+    );
+  });
+
+  // toThrowError
+  it("should throw error with message, when divide by zero", () => {
+    const calculator = new Calculator();
+    const number = 0;
+    calculator.total = number;
+    expect(function() {
+      calculator.divide(number)
+    }).toThrowError();
+    expect(() => calculator.divide(number)).toThrowError(`Error trying to divide by: ${number}`);
+    expect(() => calculator.divide(number)).toThrowError(ArithmeticError, `Error trying to divide by: ${number}`);
   });
 });

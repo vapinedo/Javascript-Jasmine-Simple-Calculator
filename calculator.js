@@ -1,3 +1,17 @@
+class ArithmeticError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ArithmeticError";
+  }
+}
+
+class BadRequestError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "BadRequestError";
+  }
+}
+
 function Calculator() {
   this.total = 0;
 }
@@ -17,7 +31,7 @@ Calculator.prototype.multiply = function (number) {
 Calculator.prototype.divide = function (number) {
   const blackList = [0, -0, null, undefined, NaN];
   if (blackList.includes(number)) {
-    throw new Error(`Error trying to divide by: ${number}`);
+    throw new ArithmeticError(`Error trying to divide by: ${number}`);
   }
   return (this.total /= number);
 };
