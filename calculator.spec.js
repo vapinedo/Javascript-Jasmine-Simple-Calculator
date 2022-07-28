@@ -118,4 +118,13 @@ describe("TEST SUITE :: calculator.js", () => {
     expect(calculator.total).toMatch(/-?\d+/);
     expect(typeof calculator.total).toMatch("ber");
   });
+
+  /**************************
+   * Asymmetricts Matchers
+   ***************************/
+  it("should return the total as value", () => {
+    const calculator = new Calculator();
+    calculator.total = 2;
+    expect(calculator.total).toEqual(jasmine.anything()); // anything less null or undefined
+  });
 });
