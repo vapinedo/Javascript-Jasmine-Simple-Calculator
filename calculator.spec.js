@@ -131,10 +131,18 @@ describe("TEST SUITE :: calculator.js", () => {
   });
 
   // any matcher
-  it('should be an instance', () => {
+  it("should be an instance", () => {
     const calculator = new Calculator();
     calculator.total = 10;
     expect(calculator).toEqual(jasmine.any(Object));
     expect(calculator.total).toEqual(jasmine.any(Number));
+  });
+
+  // objectContaining
+  it("should contain total as key", () => {
+    const calculator = new Calculator();
+    calculator.total = 10;
+    expect(calculator).toEqual(jasmine.objectContaining({ total: 10 }));
+    expect(typeof calculator.total).toEqual(jasmine.stringContaining('mber'));
   });
 });
