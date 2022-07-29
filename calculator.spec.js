@@ -143,6 +143,20 @@ describe("TEST SUITE :: calculator.js", () => {
     const calculator = new Calculator();
     calculator.total = 10;
     expect(calculator).toEqual(jasmine.objectContaining({ total: 10 }));
-    expect(typeof calculator.total).toEqual(jasmine.stringContaining('mber'));
+    expect(typeof calculator.total).toEqual(jasmine.stringContaining("mber"));
+  });
+
+  /**************************
+   * Custom Matcher
+   ***************************/
+
+  // toBeCalculator
+  it("should be an instance of Calculator", () => {
+    jasmine.addMatchers(CustomMatcher);
+    const calculator = new Calculator();
+    calculator.total = 10;
+    expect(calculator).toBeCalculator();
+    // expect(calculator).not.toBeCalculator();
+    // expect(calculator.total).not.toBeCalculator();
   });
 });
