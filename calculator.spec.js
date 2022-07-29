@@ -122,9 +122,19 @@ describe("TEST SUITE :: calculator.js", () => {
   /**************************
    * Asymmetricts Matchers
    ***************************/
+
+  // anything matcher
   it("should return the total as value", () => {
     const calculator = new Calculator();
     calculator.total = 2;
     expect(calculator.total).toEqual(jasmine.anything()); // anything other than null or undefined
+  });
+
+  // any matcher
+  it('should be an instance', () => {
+    const calculator = new Calculator();
+    calculator.total = 10;
+    expect(calculator).toEqual(jasmine.any(Object));
+    expect(calculator.total).toEqual(jasmine.any(Number));
   });
 });
