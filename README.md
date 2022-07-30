@@ -71,4 +71,17 @@ be executed one time. That means there is not execution every time.
 This methods will be executed after the suites ( describe methods )
 
 **2. afterEach**
+
+It will be executed after all specs on the test suite in which it's defined.
+
+For example if you have 10 specs methods in your test suite, afterEach method will
+be executed 10 times. That means one time after each spec ( it or test ) execution.
+
+
 **2. afterAll**
+
+It will be executed after all specs on the test suite in which it's defined, but
+i will be executed just only one time.
+
+For example if you have 10 specs methods in your test suite, afterAll method will
+be executed one time. That means there is not execution every time.
