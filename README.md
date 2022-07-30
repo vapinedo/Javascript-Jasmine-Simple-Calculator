@@ -56,7 +56,16 @@ This methods will be executed before each and every specs ( it or test method ) 
 It will be executed before all specs on the test suite in which it's defined.
 
 For example if you have 10 specs methods in your test suite, beforeEach method will
-be executed 10 times.
+be executed 10 times. That means one time before each spec ( it or test ) execution.
 
 **2. beforeAll**
+
+It will be executed before all specs on the test suite in which it's defined, but
+i will be executed just only one time.
+
+For example if you have 10 specs methods in your test suite, beforeAll method will
+be executed one time. That means there is not execution every time.
+
+
+
 
