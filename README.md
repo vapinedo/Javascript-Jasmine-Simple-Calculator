@@ -1,4 +1,4 @@
-# Javascript Testing with Jasmine :: Simple Calculator
+# Javascript Testing with Jasmine Testing Framework :: Simple Calculator
 
 ## 1. Composition for Testing
 
