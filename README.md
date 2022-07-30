@@ -1,6 +1,6 @@
 # Javascript Testing with Jasmine :: Simple Calculator
 
-## Composition for Testing
+## 1. Composition for Testing
 
 1. Testing Structure
     1. Test Suite ( usually describe method)
@@ -12,18 +12,16 @@
         2. Matcher ( toBe, toEqual, ToBeUndefined, ToBeDefined, ToBeNull, etc ) throws boolean outputs
 3. Test Launcher or Test Runner
     1. Karma
-## Some Frameworks for unit and integration testing
+## 2. Some Frameworks for unit and integration testing
     1. Jest 
     2. Jasmine
     2. Mocha 
 
-## Some Libraries for unit and integration testing
+## 3. Some Libraries for unit and integration testing
     1. React Testing Library
     2. Chai ( Assertion Library )
 
-# Code Samples
-
-## Testing Structure
+## 4. Code Sample :: Testing Structure
 ### 1. Test Suite
 ```
 @params
@@ -50,3 +48,15 @@ describe("TEST SUITE :: nameOfFileToTest.ext", () => {});
     expect(valueReturnByActualCoding).toBe(valueExpectedByUser);
 
 ```
+
+## 5. Test Lancucher :: Setup and Teardown
+
+Setup and teardown are jasmine lice cycle methods 
+
+### Setup methods
+
+This methods will be executed before each and every specs (it or test method) in the suites ( describe methods )
+
+**1. beforeEach**
+**2. beforeAll**
+
