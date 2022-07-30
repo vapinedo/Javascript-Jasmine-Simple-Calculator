@@ -45,7 +45,7 @@ describe("TEST SUITE :: nameOfFileToTest.ext", () => {});
 ```
 ## 5. Test Launcher :: Setup and Teardown
 
-Setup and teardown are jasmine lice cycle methods for the test suite ( describe method )
+Setup and teardown are Jasmine lice cycle methods for the test suite ( describe method )
 
 ### Setup methods
 
