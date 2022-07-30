@@ -49,7 +49,7 @@ describe("TEST SUITE :: nameOfFileToTest.ext", () => {});
 
 ```
 
-## 5. Test Lancucher :: Setup and Teardown
+## 5. Test Launcher :: Setup and Teardown
 
 Setup and teardown are jasmine lice cycle methods 
 
