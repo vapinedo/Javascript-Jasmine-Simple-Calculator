@@ -16,11 +16,9 @@
     1. Jest 
     2. Jasmine
     2. Mocha 
-
 ## 3. Some Libraries for unit and integration testing
     1. React Testing Library
     2. Chai ( Assertion Library )
-
 ## 4. Code Sample :: Testing Structure
 ### 1. Test Suite
 ```
@@ -29,7 +27,6 @@
     second: ( function ) wich will contains all specs or test for test suite
 
 describe("TEST SUITE :: nameOfFileToTest.ext", () => {});
-
 ```
 ### 2. Assertion Libary
 ```
@@ -38,7 +35,6 @@ describe("TEST SUITE :: nameOfFileToTest.ext", () => {});
     seconnd: ( function ) to write expectation or expectations
 
   it("should subtract number from the total", () => {});
-
 ```
 ### 3. Expectation
 ```
@@ -46,9 +42,7 @@ describe("TEST SUITE :: nameOfFileToTest.ext", () => {});
     second: ( function ) matcher
 
     expect(valueReturnByActualCoding).toBe(valueExpectedByUser);
-
 ```
-
 ## 5. Test Launcher :: Setup and Teardown
 
 Setup and teardown are jasmine lice cycle methods 
@@ -59,7 +53,7 @@ This methods will be executed before each and every specs ( it or test method ) 
 
 **1. beforeEach**
 
-It will be executed before all specs on the test suite in which it's defined
+It will be executed before all specs on the test suite in which it's defined.
 
 For example if you have 10 specs methods in your test suite, beforeEach method will
 be executed 10 times.
