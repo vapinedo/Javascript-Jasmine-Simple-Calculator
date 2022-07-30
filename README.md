@@ -70,7 +70,7 @@ be executed one time. That means there is not execution every time.
 
 This methods will be executed after the suites ( describe methods )
 
-**2. afterEach**
+**1. afterEach**
 
 It will be executed after all specs on the test suite in which it's defined.
 
