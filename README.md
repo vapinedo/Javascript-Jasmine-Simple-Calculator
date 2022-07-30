@@ -58,5 +58,6 @@ Setup and teardown are jasmine lice cycle methods
 This methods will be executed before each and every specs (it or test method) in the suites ( describe methods )
 
 **1. beforeEach**
+
 **2. beforeAll**
 
