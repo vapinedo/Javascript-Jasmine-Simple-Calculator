@@ -8,22 +8,22 @@ describe("TEST SUITE :: main.js", () => {
     xit("should validate operation");
     xit("should calls updateResult");
   });
-  describe("updateResult()", () => {
-    let element = null;
-    beforeAll(() => {
-      element = document.createElement("div");
+
+  describe("updateResult()", function () {
+    beforeAll(function() {
+      const element = document.createElement("div");
       element.setAttribute("id", "result");
       document.body.appendChild(element);
+      this.element = element;
     });
 
-    afterAll(() => {
-      const element = document.getElementById("result");
-      document.body.removeChild(element);
+    afterAll(function() {
+      document.body.removeChild(this.element);
     });
 
-    it("should add result to the DOM Element", () => {
+    it("should add result to the DOM Element", function() {
       updateResult("5");
-      expect(element.innerText).toBe("5");
+      expect(this.element.innerText).toBe("5");
     });
   });
 });
