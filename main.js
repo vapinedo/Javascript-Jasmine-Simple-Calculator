@@ -1,4 +1,7 @@
-document.getElementById("inputValue").addEventListener("change", calculate);
+
+if (document.getElementById("inputValue") !== null) {
+  document.getElementById("inputValue").addEventListener("change", calculate);
+}
 
 function calculate(event) {
   const inputValue = event.target.value;
