@@ -85,3 +85,16 @@ i will be executed just only one time.
 
 For example if you have 10 specs methods in your test suite, afterAll method will
 be executed one time. That means there is not execution every time.
+
+## 6. Spies
+
+Help us to isolated dependencies when making true unit testing. In other testing frameworks, 
+they are also called as Test Doubles. Are just objects in order to acts like the real dependency.
+
+**Some especial spices matchers**
+
+This are the 3 main spies matchers.
+
+    1. toHaveBeenCalled
+    2. toHaveBeenCalledWith
+    3. toHaveBeenCalledTimes
