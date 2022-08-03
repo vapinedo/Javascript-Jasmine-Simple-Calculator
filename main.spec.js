@@ -2,23 +2,26 @@ describe("TEST SUITE :: main.js", () => {
   describe("calculate()", () => {
     it("should validate expression if the first number is invalid", () => {
       const expression = "a+3";
-      spyOn(window, "updateResult").and.stub();
+      spyOn(window, "updateResult"); // and.stub is the default one and can be omitted
       calculate(expression);
       expect(window.updateResult).toHaveBeenCalled();
+      expect(window.updateResult).toHaveBeenCalledWith("Expression not recognized");
     });
-
+    
     it('should validate expression if the second number is invalid', () => {
       const expression = "3+a";
-      spyOn(window, "updateResult").and.stub();
+      spyOn(window, "updateResult");
       calculate(expression);
       expect(window.updateResult).toHaveBeenCalled();
+      expect(window.updateResult).toHaveBeenCalledWith("Expression not recognized");
     });
     
     it('should validate expression if the operaiton is invalid', () => {
       const expression = "3_5";
-      spyOn(window, "updateResult").and.stub();
+      spyOn(window, "updateResult");
       calculate(expression);
       expect(window.updateResult).toHaveBeenCalled();
+      expect(window.updateResult).toHaveBeenCalledWith("Expression not recognized");
     });
 
     xit("should call add");
