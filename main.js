@@ -1,10 +1,13 @@
-
 if (document.getElementById("inputValue") !== null) {
-  document.getElementById("inputValue").addEventListener("change", calculate);
+  document
+    .getElementById("inputValue")
+    .addEventListener("change", function (event) {
+      calculate(event.target.value);
+    });
 }
 
-function calculate(event) {
-  const inputValue = event.target.value;
+function calculate(value) {
+  const inputValue = value;
   const regExp = /\+|\-|\*|\//gm;
 
   const numberList = inputValue.split(regExp);
