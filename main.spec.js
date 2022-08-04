@@ -27,10 +27,18 @@ describe("TEST SUITE :: main.js", () => {
       expect(window.updateResult).toHaveBeenCalledTimes(1);
     });
 
-    xit("should call add");
-    xit("should call subtract");
-    xit("should call multiply");
-    xit("should call divide");
+    it("should calls add", function() {
+      spyOn(Calculator.prototype, "add");
+      calculate("3+2");
+      expect(Calculator.prototype.add).toHaveBeenCalled();
+      expect(Calculator.prototype.add).toHaveBeenCalledTimes(2);
+      expect(Calculator.prototype.add).toHaveBeenCalledWith(2);
+      expect(Calculator.prototype.add).toHaveBeenCalledWith(3);
+    });
+
+    xit("should calls subtract");
+    xit("should calls multiply");
+    xit("should calls divide");
     xit("should validate operation");
     xit("should calls updateResult");
   });
