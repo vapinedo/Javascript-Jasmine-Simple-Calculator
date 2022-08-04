@@ -28,11 +28,11 @@ describe("TEST SUITE :: main.js", () => {
     });
 
     it("should calls add", function() {
-      spyOn(Calculator.prototype, "add");
+      const spy = spyOn(Calculator.prototype, "add");
       calculate("3+2");
-      expect(Calculator.prototype.add).toHaveBeenCalled();
-      expect(Calculator.prototype.add).toHaveBeenCalledTimes(2);
-      expect(Calculator.prototype.add).toHaveBeenCalledWith(2);
+      expect(spy).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalledTimes(2);
+      expect(spy).toHaveBeenCalledWith(2);
       expect(Calculator.prototype.add).toHaveBeenCalledWith(3);
     });
 
