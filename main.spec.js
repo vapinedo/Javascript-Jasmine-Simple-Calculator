@@ -63,8 +63,14 @@ describe("TEST SUITE :: main.js", () => {
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
-    xit("should validate operation");
-    xit("should calls updateResult");
+    it("should calls updateResult", () => {
+      spyOn(window, "updateResult");
+      const spy = spyOn(Calculator.prototype, "multiply").and.callThrough();
+      calculate("3*12");
+      expect(window.updateResult).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalled();
+      expect(window.updateResult).toHaveBeenCalledWith(36);
+    });
   });
 
   describe("updateResult()", function () {
