@@ -82,6 +82,15 @@ describe("TEST SUITE :: main.js", () => {
       expect(spy).toHaveBeenCalled();
       expect(window.updateResult).toHaveBeenCalledWith("Fake call");
     });
+
+    it("should calls updateResult (example for returnValue)", () => {
+      spyOn(window, "updateResult");
+      const spy = spyOn(Calculator.prototype, "multiply").and.returnValue("returns a value");
+      calculate("3*12");
+      expect(window.updateResult).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalled();
+      expect(window.updateResult).toHaveBeenCalledWith("returns a value");
+    });
   });
 
   describe("updateResult()", function () {
