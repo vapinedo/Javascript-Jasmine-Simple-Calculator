@@ -100,6 +100,11 @@ describe("TEST SUITE :: main.js", () => {
       expect(spy).toHaveBeenCalled();
       expect(window.updateResult).toHaveBeenCalledWith("second call");
     });
+
+    it("should does not handle errors", () => {
+      const spy = spyOn(Calculator.prototype, "multiply").and.throwError("Some error");
+      expect(() => calculate("3*3")).toThrowError("Some error");
+    });
   });
 
   describe("updateResult()", function () {
