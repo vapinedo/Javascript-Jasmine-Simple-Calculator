@@ -91,6 +91,15 @@ describe("TEST SUITE :: main.js", () => {
       expect(spy).toHaveBeenCalled();
       expect(window.updateResult).toHaveBeenCalledWith("returns a value");
     });
+
+    it("should calls updateResult (example for returnValues)", () => {
+      spyOn(window, "updateResult");
+      const spy = spyOn(Calculator.prototype, "add").and.returnValues(null, "second call");
+      calculate("3+3");
+      expect(window.updateResult).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalled();
+      expect(window.updateResult).toHaveBeenCalledWith("second call");
+    });
   });
 
   describe("updateResult()", function () {
