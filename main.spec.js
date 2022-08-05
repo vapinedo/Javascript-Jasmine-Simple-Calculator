@@ -36,9 +36,33 @@ describe("TEST SUITE :: main.js", () => {
       expect(Calculator.prototype.add).toHaveBeenCalledWith(3);
     });
 
-    xit("should calls subtract");
-    xit("should calls multiply");
-    xit("should calls divide");
+    it("should calls subtract", () => {
+      const spy = spyOn(Calculator.prototype, "subtract");
+      calculate("3-2");
+      expect(spy).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalledWith(2);
+      expect(spy).not.toHaveBeenCalledWith(3);
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    it("should calls multiply", () => {
+      const spy = spyOn(Calculator.prototype, "multiply");
+      calculate("3*2");
+      expect(spy).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalledWith(2);
+      expect(spy).not.toHaveBeenCalledWith(3);
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    it("should calls divide", () => {
+      const spy = spyOn(Calculator.prototype, "divide");
+      calculate("10/2");
+      expect(spy).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalledWith(2);
+      expect(spy).not.toHaveBeenCalledWith(10);
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
     xit("should validate operation");
     xit("should calls updateResult");
   });
