@@ -63,13 +63,24 @@ describe("TEST SUITE :: main.js", () => {
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
-    it("should calls updateResult", () => {
+    it("should calls updateResult (example for callThrough)", () => {
       spyOn(window, "updateResult");
       const spy = spyOn(Calculator.prototype, "multiply").and.callThrough();
       calculate("3*12");
       expect(window.updateResult).toHaveBeenCalled();
       expect(spy).toHaveBeenCalled();
       expect(window.updateResult).toHaveBeenCalledWith(36);
+    });
+
+    it("should calls updateResult (example for callFake)", () => {
+      spyOn(window, "updateResult");
+      const spy = spyOn(Calculator.prototype, "multiply").and.callFake(() => {
+        return "Fake call";
+      });
+      calculate("3*12");
+      expect(window.updateResult).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalled();
+      expect(window.updateResult).toHaveBeenCalledWith("Fake call");
     });
   });
 
