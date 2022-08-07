@@ -38,7 +38,7 @@ Calculator.prototype.divide = function (number) {
 
 Object.defineProperty(Calculator.prototype, "version", {
   get: function() {
-    return "0.1";
+    return "1.0.0";
   },
   configurable: true,
   enumerable: true,

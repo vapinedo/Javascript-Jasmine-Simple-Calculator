@@ -52,3 +52,11 @@ function updateResult(result) {
     element.innerText = result;
   }
 }
+
+function showVersion() {
+  const calculator = new Calculator();
+  const element = document.getElementById("version");
+  if (element !== null) {
+    element.innerText = calculator.version;
+  }
+}
