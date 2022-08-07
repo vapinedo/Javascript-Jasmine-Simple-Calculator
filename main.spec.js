@@ -1,33 +1,39 @@
-´´´´describe("TEST SUITE :: main.js", () => {
+describe("TEST SUITE :: main.js", () => {
   describe("calculate()", () => {
     it("should validate expression if the first number is invalid", () => {
       const expression = "a+3";
       spyOn(window, "updateResult"); // and.stub is the default one and can be omitted
       calculate(expression);
       expect(window.updateResult).toHaveBeenCalled();
-      expect(window.updateResult).toHaveBeenCalledWith("Expression not recognized");
+      expect(window.updateResult).toHaveBeenCalledWith(
+        "Expression not recognized"
+      );
       expect(window.updateResult).toHaveBeenCalledTimes(1);
     });
-    
-    it('should validate expression if the second number is invalid', () => {
+
+    it("should validate expression if the second number is invalid", () => {
       const expression = "3+a";
       spyOn(window, "updateResult");
       calculate(expression);
       expect(window.updateResult).toHaveBeenCalled();
-      expect(window.updateResult).toHaveBeenCalledWith("Expression not recognized");
+      expect(window.updateResult).toHaveBeenCalledWith(
+        "Expression not recognized"
+      );
       expect(window.updateResult).toHaveBeenCalledTimes(1);
     });
-    
-    it('should validate expression if the operaiton is invalid', () => {
+
+    it("should validate expression if the operaiton is invalid", () => {
       const expression = "3_5";
       spyOn(window, "updateResult");
       calculate(expression);
       expect(window.updateResult).toHaveBeenCalled();
-      expect(window.updateResult).toHaveBeenCalledWith("Expression not recognized");
+      expect(window.updateResult).toHaveBeenCalledWith(
+        "Expression not recognized"
+      );
       expect(window.updateResult).toHaveBeenCalledTimes(1);
     });
 
-    it("should calls add", function() {
+    it("should calls add", function () {
       const spy = spyOn(Calculator.prototype, "add");
       calculate("3+2");
       expect(spy).toHaveBeenCalled();
@@ -85,7 +91,9 @@
 
     it("should calls updateResult (example for returnValue)", () => {
       spyOn(window, "updateResult");
-      const spy = spyOn(Calculator.prototype, "multiply").and.returnValue("returns a value");
+      const spy = spyOn(Calculator.prototype, "multiply").and.returnValue(
+        "returns a value"
+      );
       calculate("3*12");
       expect(window.updateResult).toHaveBeenCalled();
       expect(spy).toHaveBeenCalled();
@@ -94,7 +102,10 @@
 
     it("should calls updateResult (example for returnValues)", () => {
       spyOn(window, "updateResult");
-      const spy = spyOn(Calculator.prototype, "add").and.returnValues(null, "second call");
+      const spy = spyOn(Calculator.prototype, "add").and.returnValues(
+        null,
+        "second call"
+      );
       calculate("3+3");
       expect(window.updateResult).toHaveBeenCalled();
       expect(spy).toHaveBeenCalled();
@@ -102,7 +113,9 @@
     });
 
     it("should does not handle errors", () => {
-      const spy = spyOn(Calculator.prototype, "multiply").and.throwError("Some error");
+      const spy = spyOn(Calculator.prototype, "multiply").and.throwError(
+        "Some error"
+      );
       expect(() => calculate("3*3")).toThrowError("Some error");
     });
   });
@@ -122,6 +135,15 @@
     it("should add result to the DOM Element", function () {
       updateResult("5");
       expect(this.element.innerText).toBe("5");
+    });
+  });
+
+  describe("showVersion()", () => {
+    it("should call the showVersion method", () => {
+      const spy = spyOn(document, "getElementById").and.returnValue({
+        innerText: null,
+      });
+      showVersion();
     });
   });
 });
