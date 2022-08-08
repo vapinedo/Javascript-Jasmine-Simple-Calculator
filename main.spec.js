@@ -140,10 +140,14 @@ describe("TEST SUITE :: main.js", () => {
 
   describe("showVersion()", () => {
     it("should call the showVersion method", () => {
-      const spy = spyOn(document, "getElementById").and.returnValue({
+      spyOn(document, "getElementById").and.returnValue({
         innerText: null,
       });
+      const spyCalculatorVersion = spyOnProperty(Calculator.prototype, "version", "get").and.returnValue("3.0")
       showVersion();
+      expect(spyCalculatorVersion).toHaveBeenCalled(); 
+      expect(spyCalculatorVersion).toHaveBeenCalledTimes(1); 
+      expect(spyCalculatorVersion()).toEqual("3.0"); 
     });
   });
 });
