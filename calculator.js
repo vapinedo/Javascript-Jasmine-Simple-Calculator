@@ -37,8 +37,15 @@ Calculator.prototype.divide = function (number) {
 };
 
 Object.defineProperty(Calculator.prototype, "version", {
-  get: function() {
-    return "1.0.0";
+  get: function () {
+    return fetch(
+      "https://gist.githubusercontent.com/vapinedo/b9dfdf0e93986868791ebb98a69cf97e/raw/caae870a4efbff04330003c9a7aac791c184df33/version.json"
+    ).then(function (response) {
+      return response.json();
+    })
+    .then(function(data) {
+      return data.version;
+    }); 
   },
   configurable: true,
   enumerable: true,
