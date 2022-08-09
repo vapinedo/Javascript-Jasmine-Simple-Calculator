@@ -138,16 +138,23 @@ describe("TEST SUITE :: main.js", () => {
     });
   });
 
-  xdescribe("showVersion()", () => {
-    it("should call the showVersion method", () => {
-      spyOn(document, "getElementById").and.returnValue({
+  describe("showVersion()", () => {
+    it("should call the showVersion method", (done) => {
+      const element =  spyOn(document, "getElementById").and.returnValue({
         innerText: null,
       });
-      const spyCalculatorVersion = spyOnProperty(Calculator.prototype, "version", "get").and.returnValue("3.0")
+      const spyCalculatorVersion = spyOnProperty(
+        Calculator.prototype,
+        "version",
+        "get"
+      ).and.returnValue(Promise.resolve("2.0"));
       showVersion();
-      expect(spyCalculatorVersion).toHaveBeenCalled(); 
-      expect(spyCalculatorVersion).toHaveBeenCalledTimes(1); 
-      expect(spyCalculatorVersion()).toEqual("3.0"); 
+      expect(spyCalculatorVersion).toHaveBeenCalled();
+      expect(spyCalculatorVersion).toHaveBeenCalledTimes(1);
+      spyCalculatorVersion().then(function(version) {
+        expect(element().innerText ).toBe(version);
+         done(); 
+      });
     });
   });
 });

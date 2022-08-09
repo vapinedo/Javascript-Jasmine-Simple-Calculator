@@ -11,7 +11,7 @@ describe("TEST SUITE :: calculator.js", () => {
 
     // executes after each and every spec in suite
     afterEach(() => {
-      // usefull for cleaning up 
+      // usefull for cleaning up
     });
 
     // toBeNull Matcher
@@ -156,14 +156,16 @@ describe("TEST SUITE :: calculator.js", () => {
       });
     });
 
-    describe("get version", function() {
-      it("should fetches version from external source", function(done) { 
-        calculator.version.then(function(version) {
+    describe("get version", function () {
+      it("should fetches version from external source", function (done) {
+        spyOn(window, "fetch").and.returnValue(
+          Promise.resolve(new Response('{"version": "2.0"}'))
+        );
+        calculator.version.then(function (version) {
           expect(version).toBe("2.0");
-          done(); 
-        })
+          done();
+        });
       });
     });
-
   });
 });
