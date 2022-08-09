@@ -155,5 +155,15 @@ describe("TEST SUITE :: calculator.js", () => {
         );
       });
     });
+
+    describe("get version", function() {
+      it("should fetches version from external source", function(done) { 
+        calculator.version.then(function(version) {
+          expect(version).toBe("2.0");
+          done(); 
+        })
+      });
+    });
+
   });
 });
