@@ -1,0 +1,20 @@
+{
+  "name": "javascript-jasmine-simple-calculator",
+  "version": "1.0.0",
+  "description": "## Unit testing using Jasmine Framework",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vapinedo/Javascript-Jasmine-Simple-Calculator.git"
+  },
+  "keywords": [],
+  "author": " victorpinedomartinez@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vapinedo/Javascript-Jasmine-Simple-Calculator/issues"
+  },
+  "homepage": "https://github.com/vapinedo/Javascript-Jasmine-Simple-Calculator#readme"
+}
