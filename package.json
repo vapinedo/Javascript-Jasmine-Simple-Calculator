@@ -4,9 +4,9 @@
   "description": "## Unit testing using Jasmine Framework",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
-  "repository": {
+  "repository": { 
     "type": "git",
     "url": "git+https://github.com/vapinedo/Javascript-Jasmine-Simple-Calculator.git"
   },
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/vapinedo/Javascript-Jasmine-Simple-Calculator/issues"
   },
-  "homepage": "https://github.com/vapinedo/Javascript-Jasmine-Simple-Calculator#readme"
+  "homepage": "https://github.com/vapinedo/Javascript-Jasmine-Simple-Calculator#readme",
+  "devDependencies": {
+    "jasmine-core": "^4.3.0",
+    "karma": "^6.4.0",
+    "karma-jasmine": "^5.1.0"
+  }
 }
